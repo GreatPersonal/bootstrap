@@ -1,0 +1,304 @@
+@import "mixin";
+@import url(base.css);
+html,body {
+  height:100%;
+  width:100%;
+  background: #f2f2f2;
+}
+//头部
+.header{
+  text-align: center;
+  min-height: 400px;
+  padding: 138px 0 0;
+  background:url(../img/top.jpg)no-repeat center 0;
+  background-size:cover;
+  position: relative;
+  .word{
+    h1{
+      margin-top: 16px;
+      @include font('microsoft yahei',64px,600,#fff);
+      z-index:9999;
+    }
+    h3{
+      margin-top: 16px;
+      @include font('microsoft yahei',34px,400,#fff);
+      z-index:9999;
+    }
+  }
+  .mid{
+    position: absolute;
+    bottom:-34px;
+    left:0;right:0;
+    a{
+      img{
+        vertical-align:center;
+        width:78px;
+      }
+    }
+  }
+}
+.clearfix::after{
+  content:'';
+  clear:both;
+  display:block;
+}
+
+//内容区域
+.main{
+  margin-top:90px;
+  //@include bg();
+  display: block;
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+    .row{
+      .post-img{
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        .box{
+          position: relative;
+          margin-bottom: 30px;
+          padding-bottom: 40px;
+          background: #fff;
+          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+          .imgbox{
+              position: relative;
+              overflow: hidden;
+            }
+        a{
+          display: block;
+          padding: 12px;
+          width: 100%;
+          img{
+            display: block;
+            max-width: 100%;
+              @include sz(700px,auto)
+        }
+          }
+          h2 a{
+            @include font('microsoft yahei',24px,400,#777777);
+            bottom: 10px;
+            text-align: center;
+            @include center();
+            &:hover{
+              text-decoration: underline;
+              color: #000;}
+          }
+        }
+      }
+    }
+    .nav{
+      //@include bg();
+      color: #666;
+      position: relative;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      padding-left: 0;
+      margin: 20px 0;
+      span{
+        color: #39414a;
+        //margin:0 auto;
+      }
+      a{
+        right:0;
+        position: absolute;
+        border: 1px solid #39414a;
+        padding: 10px;
+        top:-10px;
+        margin-right: 30px;
+        color: #39414a;
+        border-radius: 3px;
+        &:hover{
+          background: #4A4849;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}
+@media (min-width: 768px){
+
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px){
+
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px){
+  .container {
+    width: 1170px;
+  }
+}
+
+
+
+
+@media  (min-width:992px){
+  @for $index from 1 through 12{
+    .post-img {
+      &.col-md-#{$index}{
+        float: left;
+        width: percentage($index/12);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px){
+  @for $index from 1 through 12{
+    .post-img{
+      &.col-md-#{$index}{
+        float: left;
+        width: percentage($index/12);
+      }
+    }
+  }
+}
+@media  (min-width: 100px) {
+  @for $index from 1 through 12 {
+  .col-xs-#{$index} {
+    float: left;
+    width: percentage($index/12);
+  }
+}
+}
+
+
+
+@media  (max-width:992px) {
+      &.col-xs-12:nth-child(1),&.col-xs-12:nth-child(2),&.col-xs-12:nth-last-child(1),&.col-xs-12:nth-last-child(2) {
+        float: left;
+        width: 100%;
+
+  }
+}
+.sumbit{
+  background-color: #eee;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin-top: 60px;
+  position: relative;
+  p{
+    text-align: center;
+    @include font('microsoft yahei',14px,400,#333);
+    a{
+      @include font('microsoft yahei',14px,400,#337AC3);
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//页脚区域
+.footer{
+  min-height:202px;
+  //height:202px;
+  @include sz(100%,auto);
+  background: #202020;
+  padding: 35px 0 0;
+  color: #959595;
+  .container{
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    //@include sz(1170px,100%);
+    .row{
+      @include sz(100%,100%);
+      .col-sm-4{
+        margin-bottom: 35px;
+        padding:0 30px;
+        //@include bg();
+        float: left;
+        h4{
+          margin-top: 0;
+          padding-bottom: 7px;
+          margin-bottom: 21px;
+          position: relative;
+        @include font('microsoft yahei',18px,400,#fff);
+        border-bottom: 1px solid #303030;
+        }
+        h4:after{
+          content: '';
+          width:90px;
+          height: 1px;
+          background: #337ab7;
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+        }
+        a{
+          line-height:40px;
+          @include font('microsoft yahei',14px,400,#959595);
+          transition: all .2s ease;
+          &:hover{
+            color: #fff;
+          }
+        }
+        .cact{
+          a{
+            padding: 2px 7px;
+            color: #959595;
+            line-height: 1.5em;
+            display: inline-block;
+            margin: 0 7px 7px 0;
+            transition: all .2s ease;
+            border: 1px solid #303030;
+            &:hover{
+              background: #337ab7;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media  (min-width: 768px){
+  @for $index from 1 through 12{
+    .col-sm-#{$index}{
+      float: left;
+      width: percentage($index/12);
+    }
+  }
+}
+.copyright{
+  background: #111;
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+  padding-top: 14px;
+  padding-bottom: 20px;
+  border-top: 1px solid #303030;
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin:0 auto;
+    .row{
+      margin-right: -15px;
+      margin-left: -15px;
+      .col-sm-12{
+        float: left;
+        width:100%;
+        span{
+          margin: 0.5em;
+          a{
+            color: #555;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

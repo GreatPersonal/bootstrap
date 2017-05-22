@@ -1,0 +1,90 @@
+@mixin center(){
+	position: absolute;
+	left:0;
+	right:0;
+	margin: auto
+}
+@mixin mid(){
+	position: absolute;
+	top:0;
+	bottom:0;
+	margin: auto
+}
+@mixin sz($w,$h){
+	width:$w;
+	height:$h;
+}
+@mixin font($font,$size,$bold,$color){
+	font-size: $size;
+	font-family:$font;
+	font-weight: $bold;
+	color:$color;
+}
+@mixin  border($l,$r,$t,$b){
+	border-left:$l;
+	border-right:$r;
+	border-top:$t;
+	border-bottom:$b;
+}
+@mixin bg(){
+	$r:floor(random()*256);
+	$g:floor(random()*256);
+	$b:floor(random()*256);
+	$a:floor(random()*3+6)/10;
+	$color:rgba($r,$g,$b,$a);
+	background: $color;
+}
+@mixin center($left,$right){
+  position: absolute;
+  margin:auto;
+  left: $left;
+  right:$right;
+}
+@mixin middle($top,$bottom){
+  position: absolute;
+  margin:auto;
+  top: $top;
+  bottom:$bottom;
+}
+@mixin css($w,$h,$bg){
+  width:$w;
+  height:$h;
+  background: $bg;
+}
+@mixin bg($url){
+  background-image:$url;
+
+}
+@mixin bg($clo){
+  background-color:$clo;
+
+}
+@mixin bg($reat){
+  background-repeat:$reat;
+
+}
+@mixin fltr($r){
+  float:$r;
+}
+@mixin fltl($l){
+  float:$l;
+}
+@mixin margin($num){
+  margin-right:$num;
+}
+@mixin ft($size,$face,$color,$line,$middle){
+  font-size: $size;
+  font-family: $face;
+  color: $color;
+  line-height: $line;
+  text-align: $middle;
+}
+@mixin border($t,$r,$b,$l){
+  border-top:$t;
+  border-right:$r;
+  border-bottom:$b;
+  border-left:$l;
+}
+@mixin display($b){
+  display: $b
+}
